@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+{% if user.is_authenticated  %}
+  <h2>Hi {{ user.username }}! Welcome to Twitter Clone</h2>
+  <a href="/timeline">Timeline</a>
+  <a href="{% url 'logout' %}">logout</a>
+{% else %}
+  <h2>Welcome to Twitter Clone</h2>
+  <a href="{% url 'login' %}">login</a>
+{% endif %}
+{% endblock %}

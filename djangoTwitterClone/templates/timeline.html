@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h2>{{ user.username }}'s Timeline</h2>
+    <a href="/new_tweet">Novo Tweet</a>
+
+    <ul>
+      {% for tweet in tweets %}
+        <li>{{ tweet.text }}</li>
+      {% endfor %}
+    </ul>
+{% endblock %}
